@@ -1,0 +1,186 @@
+MyArxiv — Your arXiv Digest
+2026-10-26 · cs.CV, cs.AI
+225 fetched → 60 candidates → 7 selected
+
+1. [10/10] UniWorld: A Unified World Model for Real-Time Visual World Simulation
+   Authors: Xin Zhang, Yabo Chen, Shuaiwei Wang, Zixuan Duan, Haibin Huang et al.
+   Published: Oct 23, 2026
+   Why it matters: Unifies real-time visual world simulation in a single world model, directly matching the video world model direction.
+   Categories: cs.CV
+   arXiv: http://arxiv.org/abs/2610.32381v1
+   PDF: https://arxiv.org/pdf/2610.32381v1
+   Abstract:
+     Continuous visual world simulation requires coupling evolving scene geometry with
+     temporally persistent appearance. We present UniWorld, a unified framework that integrates
+     depth trajectories and reference appearance within a shared video generation model. The
+     central design maintains visual and geometric histories on a common timeline. Noise-aligned
+     overlapping continuation places generated history at the prescribed sampling noise level
+     and commits only newly generated latents. Rolling depth latent state preserves the
+     corresponding geometric controls, incrementally reads newly available geometry, and keeps
+     the conditioning fixed within each sampling window. Together, these mechanisms ensure exact
+     preservation of latent history while bounding the active depth state by the window size. We
+     evaluate continuous generation, paired history interventions, and long-horizon behavior
+     across diverse scene categories. The same generator supports estimated, native, and on-
+     demand simulator depth, while cached and incremental execution paths produce bitwise-
+     identical outputs. Appearance changes and geometric control branches operate through the
+     same interface without modifying committed history. The measured steady-state DiT execution
+     path achieves real-time generation throughput, demonstrating the efficiency of UniWorld for
+     continuous visual world simulation.
+
+2. [9/10] UniAction: Unified Action Conditioning for World Models
+   Authors: Bowen Xue, Zizhang Li, Hong-Xing Yu, Jiajun Wu
+   Published: Oct 23, 2026
+   Why it matters: Action-conditioned world modeling connects directly to agentic video generation and interactive simulation.
+   Categories: cs.CV
+   Note: Project page: https://uniaction.github.io/
+   arXiv: http://arxiv.org/abs/2610.32977v1
+   PDF: https://arxiv.org/pdf/2610.32977v1
+   Abstract:
+     Actions that condition world models are highly heterogeneous, and thus existing action-
+     conditioned world models are typically built for individual action types, fragmenting
+     already limited action-annotated data across separate models. We introduce UniAction, a
+     unified action-conditioning framework that represents any action as a sparse set of action
+     elements, each with a discrete semantic identity and a continuous spatiotemporal grounding
+     coordinate. By mapping these coordinates directly into the pretrained video model's native
+     positional space, UniAction allows heterogeneous actions to condition a shared world model
+     within the same spatiotemporal structure. We further introduce cardinality-calibrated
+     attention to address the bias from differing action representation granularities. We
+     evaluate UniAction on four representative action forms: force, camera control, hand pose,
+     and robot pose. UniAction outperforms conditioning alternatives in action following, and a
+     single jointly trained model surpasses the action-specific experts, showing that
+     heterogeneous action data benefit from unified model and joint training.
+
+3. [8/10] ACWM-RM: A Reference-Free Reward Model from Complementary Mismatch Preferences
+   Authors: Shibo Hong, Siyu Ren, FengJiao Chen, Zhongyuan Peng, Wei Shi et al.
+   Published: Oct 23, 2026
+   Why it matters: Reward modeling for world models; useful for evaluating interactive video generation quality.
+   Categories: cs.CV
+   arXiv: http://arxiv.org/abs/2610.32222v1
+   PDF: https://arxiv.org/pdf/2610.32222v1
+   Abstract:
+     Reinforcement learning has gained attention for improving action-conditioned world models
+     (ACWMs), as it enables reward-driven optimization of visual quality (VQ) and action-
+     following fidelity (AF) beyond flow-matching optimization. Realizing this potential
+     requires reward signals that reliably rank videos by both VQ and AF. However, existing
+     rewards capture only one dimension: metric-based rewards assess VQ but require ground-truth
+     videos and do not directly assess AF, while inverse dynamics model (IDM) rewards assess AF
+     without references but do not guarantee VQ. Moreover, IDMs, typically trained on real
+     videos, may provide unreliable rewards for generated videos containing visual artifacts and
+     physical inconsistencies. In this work, we introduce the Action and Video Mismatch
+     Benchmark (AVM-Eval), comprising 67.2k pairs that evaluate how reliably IDMs assess AF on
+     real and generated videos. We then propose ACWM-RM, a reward model that jointly assesses VQ
+     and AF without ground-truth videos during reward computation. To train it, we first
+     construct the Action and Video Mismatch Preference Dataset (AVM-Pref) with 506.3k pairs
+     providing complementary supervision: action-mismatch pairs supervise AF, while video-
+     mismatch pairs supervise VQ and expose the model to generated videos. We then pretrain an
+     action-conditioned predictor on real videos to learn forward dynamics before jointly
+     training it with a patch-weighted score head on AVM-Pref to transfer these dynamics to AF
+     assessment on generated videos. Evaluation on AVM-Eval reveals the limited reliability of
+     IDMs on generated videos, while downstream RL experiments show that ACWM-RM outperforms
+     reward baselines in both criteria.
+
+4. [7/10] $Ψ$-0.6: Adaptive Streams of Thought in a Unified Vision-Language World Model
+   Authors: Khai Loong Aw, Klemen Kotar, Baihan Zhang, Yifan Liu, Lilian Chen et al.
+   Published: Oct 23, 2026
+   Why it matters: Unified vision-language world model with adaptive reasoning for video understanding and generation.
+   Categories: cs.AI, cs.CV, cs.LG
+   arXiv: http://arxiv.org/abs/2610.32177v1
+   PDF: https://arxiv.org/pdf/2610.32177v1
+   Abstract:
+     Humans reason about the physical world by flexibly combining different forms of inference
+     as a problem unfolds. Achieving this flexibility is a major open challenge in AI:
+     capabilities often remain separated across specialized models, limiting how they can be
+     composed and jointly adapted to a task. We introduce $Ψ$-0.6, a unified vision-language
+     world model that adaptively composes perception, language, geometry, and simulation within
+     a shared reasoning process we call streams of thought. These streams interleave images,
+     text, and explicit representations of geometry and motion, all of which the model can
+     generate and interpret through a shared token interface. $Ψ$-0.6 surpasses leading open-
+     weight models zero-shot on multi-view spatial reasoning, with further gains from reasoning
+     through geometric intermediates. It also supports counterfactual simulation: generating and
+     interpreting imagined scenes to determine, for example, whether moving an object would
+     obstruct a pathway. Reinforcement learning from task feedback jointly optimizes the
+     selection, generation, and use of intermediate representations, improving visual question-
+     answering accuracy with gains that transfer to unseen benchmarks. $Ψ$-0.6 offers a path
+     toward adaptive physical reasoning -- not only predicting the physical world but also
+     choosing the representations through which to reason.
+
+5. [6/10] Tempo-Zero: Recursive Self-Play in Executable Worlds for Video Reasoning
+   Authors: Jingmin Zhu, Yanyan Zou, Xiuyu Li, James Bailey, Dinh Phung et al.
+   Published: Oct 23, 2026
+   Why it matters: Self-play in executable worlds for video reasoning; closely related to interactive video models.
+   Categories: cs.CV
+   arXiv: http://arxiv.org/abs/2610.32433v1
+   PDF: https://arxiv.org/pdf/2610.32433v1
+   Abstract:
+     Video reasoning requires understanding how events unfold over time, yet videos with
+     accurate temporal annotations are expensive to collect. Self-play offers an alternative by
+     letting a model generate and solve its own tasks without manual annotation. However,
+     existing video self-play methods train on fixed sets of recorded videos, so they cannot
+     alter the underlying event dynamics and rely on noisy pseudo-labels derived from the
+     model's own outputs, such as majority voting, that risk reinforcing shared model errors. To
+     overcome these limitations, we introduce Tempo-Zero, a self-improvement framework that
+     closes a loop of executable environments, execution-verified self-play, and environment
+     evolution, where executing a program renders a video with the ground-truth option and
+     interval of every question. A single policy plays both Questioner and Solver, proposing
+     questions and answering them with timestamped evidence lines, and is trained on execution-
+     grounded rewards instead of model consensus. The Solver's performance steers a curriculum
+     over tasks and difficulty levels, and the policy selects rule changes that enrich the event
+     dynamics of later rounds. Despite being trained solely on simple programs, without
+     supervised fine-tuning or external video data which prior methods typically require, Tempo-
+     Zero outperforms the base models and recent self-play baselines on average across twelve
+     real-world video benchmarks at different model scales, with particularly strong gains on
+     temporal grounding tasks. Project page: https://alchemist-jo.github.io/tempo-zero/
+
+6. [5/10] Adaptive World-Models for Anomaly Recognition (AWARE): A Framework for Robot Dynamics Prediction and Introspection
+   Authors: Luke Beddow, George Mavroghenis, Rodrigo Chacon Quesada, Kamil Dreczkowski, Cong Sun et al.
+   Published: Oct 23, 2026
+   Why it matters: Adaptive world models for robot dynamics; relevant to video world models and action planning.
+   Categories: cs.RO, cs.AI
+   arXiv: http://arxiv.org/abs/2610.32742v1
+   PDF: https://arxiv.org/pdf/2610.32742v1
+   Abstract:
+     Unrecognized anomalies in critical infrastructure can rapidly cascade into catastrophic
+     physical or operational failures. Current anomaly detection approaches often rely on direct
+     access to the monitored system by utilizing onboard sensors, such as motor encoders, to
+     detect anomalous states. However, legacy hardware often lacks these sensors, or strict
+     security protocols may prohibit access altogether. We therefore present AWARE, a world
+     model framework that is capable of anomaly detection using only external camera monitoring
+     via system dynamics estimation and state prediction. Evaluated across 240 real-world
+     robotic crane trajectories, including payload collisions and motor degradations, AWARE
+     demonstrates a 26% improvement in anomaly classification over our strongest baseline under
+     noisy, camera-only state estimation. Furthermore, the inferred dynamics parameter can be
+     decoded to identify the source of faults, localizing the degrading motor with 88% accuracy.
+
+7. [5/10] TileShare: Training-Free Acceleration of Overlapping Tiled ViT Decoding
+   Authors: Xiangzhong Ye, Zhongshen Li, Shen You, Ziyang Meng, Liang Xu et al.
+   Published: Oct 23, 2026
+   Why it matters: Efficient tiled ViT decoding; useful infrastructure for long video and world-model inference.
+   Categories: cs.CV, cs.LG
+   Note: 8 pages main paper + supplementary material
+   arXiv: http://arxiv.org/abs/2610.32233v1
+   PDF: https://arxiv.org/pdf/2610.32233v1
+   Abstract:
+     Fixed-window Vision Transformer (ViT) decoders run at deployment resolution as overlapping
+     tiles: every token in an overlap band is processed by several full decoder instances. In
+     the 2.4B-parameter MiniMax-H3 video decoder, about half of all per-token computation is
+     duplicated. Removing the tiles fails because attention, global tokens and coordinates are
+     bound to them. TileShare keeps each released tile's attention and computes every other
+     operation once per token. The released computation changes at one kind of step only: an
+     overlap token's per-tile results are blended into one shared state with the released
+     weights. Interventions show that this blend costs quality where attention reads the shared
+     states, mainly in the first few layers, which TileShare therefore keeps per tile. Without
+     training, keeping six layers per tile decodes 1.38-1.51x faster than batched and compiled
+     tiling on two GPU types (up to 1.96x with FP8) and is equivalent to the released decoder in
+     PSNR, LPIPS and DISTS on DAVIS videos. On unseen UVG videos with the setting frozen
+     beforehand, it matches PSNR and DISTS and improves LPIPS. TileShare carries over to two
+     further decoders and is again confirmed on unseen data. It is equivalent in PSNR and DISTS
+     on MAGI-1. On the ViTok-v2 image autoencoder at 2K-4K, it matches overlapping tiling in
+     PSNR, improves LPIPS and DISTS and decodes 1.5-1.8x faster. How many layers stay per tile
+     is measured once per model (for decoders, without labels); we report it for 14 decoders and
+     encoders. Optionally, two GPU-hours of self-distillation let MiniMax-H3 share every layer
+     without a loss in PSNR, and a coordinate field trained while the network stays frozen
+     brings fully shared CLIP-based open-vocabulary segmentation to parity with sliding windows
+     on seven benchmarks.
+
+—
+Generated by MyArxiv · 2026-10-26

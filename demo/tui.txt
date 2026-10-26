@@ -1,0 +1,38 @@
+$ python update.py
+
+╭──────────────── MyArxiv · Interest Manager ────────────────╮
+│ Keywords    3 · video generation, diffusion models, computer vision │
+│ Exclude     1 · time series forecasting                        │
+│ Weights     video generation×3                                 │
+│ Categories  cs.CV, cs.AI                                       │
+│ Daily       max 20 · min score 5                               │
+╰─────────────────────────────────────────────────────────────────╯
+
+> add "flow matching" and make "world model" a core interest
+● Thinking...
+Proposed changes:
+  + include: flow matching (weight 3)
+  + include: world model (weight 3)
+Apply? [a]pply / [e]dit / [r]eject: a
+  ✓ Updated interests.keywords_include
+  ✓ Updated interests.keyword_weights
+
+> /preview 1
+Candidates · fetched 214 · showing 3
+  #  Score  Title                                          Matched keywords
+  1      9  Unified Video World Models with Latent Actions   world model×3, video generation×3
+  2      7  Flow Matching for Efficient Video Generation     flow matching×3, video generation×3
+  3      5  Diffusion Transformers for Long-Horizon Video    diffusion models, computer vision
+
+> /stats
+Keyword hits
+ Hits  Weight  Keyword
+   38       3  video generation
+   21       1  diffusion models
+   17       1  computer vision
+    6       3  world model
+    4       3  flow matching
+
+> /quit
+
+Illustrative session: exact output depends on your config, terminal and model.

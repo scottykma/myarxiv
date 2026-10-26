@@ -1,0 +1,69 @@
+# MyArxiv configuration template.
+# Copy this file to config.yaml and edit it. config.yaml is gitignored and must
+# never contain API keys or SMTP passwords -- those belong in .env or your own secret manager.
+user:
+  name: Your Name
+  email: you@example.com
+profile:
+  scholar_url: ''
+  name: Your Name
+  affiliation: Your University
+  interests:
+  - Computer Vision
+  - Generative AI
+  recent_papers: []
+interests:
+  keywords_include:
+  - video generation
+  - diffusion models
+  - computer vision
+  keyword_weights: {}
+  keywords_exclude:
+  - time series forecasting
+  categories:
+  - cs.CV
+  - cs.AI
+llm:
+  api_key_env: OPENAI_API_KEY
+  base_url: https://api.deepseek.com
+  fast_model: deepseek-v4-flash
+  pro_model: deepseek-v4-flash
+  flash_temperature: 0.1
+  pro_temperature: 0.0
+  flash_batch_size: 20
+  pro_batch_size: 30
+arxiv:
+  page_size: 100
+  delay_seconds: 10.0
+  num_retries: 2
+  trust_env: false
+external:
+  semantic_scholar_timeout: 15
+  user_agent: MyArxiv/1.0
+notification:
+  email:
+    enabled: true
+    to: you@example.com
+    smtp_host: smtp.gmail.com
+    smtp_port: 465
+    use_ssl: true
+    timeout: 15
+daily:
+  max_papers: 20
+  min_relevance_score: 5
+  lookback_days: 1
+  keyword_prefilter_top: 60
+  title_score_top: 25  # optional title-only scorer; not used by the default daily run
+keyword_prefilter:
+  title_exact_weight: 3
+  title_partial_weight: 2
+  abstract_weight: 1
+report:
+  score_green: 8
+  score_orange: 5
+paths:
+  seen_papers: seen_papers.json
+  cache_dir: .cache
+  readline_history: ~/.daily_papers_history
+  last_run: last_run.json
+  report: daily_report.html

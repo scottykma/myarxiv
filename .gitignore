@@ -1,0 +1,36 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Local secrets and machine-specific config
+.env
+.env.*
+!.env.example
+config.yaml
+config.yaml.bak
+config.yaml.tmp
+
+# Runtime state and generated reports
+.cache/
+seen_papers.json
+last_run.json
+daily_report.html
+daily_report.txt
+
+# Test and coverage output
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+
+# Packaging and editor noise
+*.egg-info/
+build/
+dist/
+.DS_Store
+.idea/
+.vscode/
+*.swp
